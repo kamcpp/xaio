@@ -1,0 +1,5 @@
+module xaio.examples.echo {
+  interface echo {
+    string echo_please(string message);
+  };
+};
