@@ -37,19 +37,19 @@ namespace compiler {
   struct xaio_operation;
   struct xaio_module;
   struct xaio_arg;
-  struct xaio_declaration;
+  struct xaio_decl;
   struct xaio_compiler_options {
-    bool generate_makefile;
-    bool generate_client;
-    bool generate_stub;
-    bool indent_with_spaces;
-    uint8_t indent_num_of_spaces;
+    bool gen_cmake;
+    bool gen_client;
+    bool gen_stub;
+    bool use_space_for_indent;
+    uint8_t num_spaces_for_indent;
     ::std::string out_dir;
-    ::std::string extend_module;
+    ::std::string extra_module;
     ::std::string get_indent_str() {
-      if (indent_with_spaces) {
-        std::string indent_str = "";
-        for (uint8_t i = 0; i < indent_num_of_spaces; i++) {
+      if (use_space_for_indent) {
+        ::std::string indent_str = "";
+        for (uint8_t i = 0; i < num_space_for_indent; i++) {
           indent_str += " ";
         }
         return indent_str;
